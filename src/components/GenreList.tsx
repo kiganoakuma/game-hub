@@ -11,6 +11,7 @@ const GenreList = () => {
           <HStack>
             <Image
               boxSize="32px"
+              borderRadius={7}
               src={getCroppedImageUrl(genre.image_background)}
             />
             <Text fontSize={"large"}>{genre.name}</Text>
