@@ -7,7 +7,6 @@ import { Card, CardBody, HStack, Heading, Image } from "@chakra-ui/react";
 interface Props {
   game: Game;
 }
-
 const GameCard = ({ game }: Props) => {
   return (
     <Card>
