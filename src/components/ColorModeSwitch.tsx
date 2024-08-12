@@ -4,7 +4,7 @@ import theme from "../theme";
 const ColorModeSwitch = () => {
   const { toggleColorMode, colorMode } = useColorMode();
   return (
-    <HStack>
+    <HStack paddingRight={3}>
       <Switch
         colorScheme="customGreen"
         isChecked={colorMode === "dark"}
