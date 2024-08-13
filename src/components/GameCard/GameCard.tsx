@@ -12,9 +12,15 @@ const GameCard = ({ game }: Props) => {
   const headingFont = game.name.length >= 20 ? "xl" : "2xl";
 
   return (
-    <Card>
+    <Card minHeight="300px">
       <Image src={getCroppedImageUrl(game.background_image)}></Image>
       <CardBody>
+        <HStack justifyContent={"space-between"} marginBottom={3}>
+          <PlatformIconList
+            platforms={game.parent_platforms.map((p) => p.platform)}
+          />
+          <CriticScore score={game.metacritic} />
+        </HStack>
         <Heading
           id="game_title"
           whiteSpace={"nowrap"}
@@ -29,12 +35,6 @@ const GameCard = ({ game }: Props) => {
         >
           {game.name}
         </Heading>
-        <HStack justifyContent={"space-between"}>
-          <PlatformIconList
-            platforms={game.parent_platforms.map((p) => p.platform)}
-          />
-          <CriticScore score={game.metacritic} />
-        </HStack>
       </CardBody>
     </Card>
   );
